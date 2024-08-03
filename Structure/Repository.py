@@ -10,10 +10,10 @@ class Repository (object):
 
     def __init__(self, path, force=False):
         self.worktree = path
-        self.gitdir = os.path.join(path, ".git")
+        self.gitdir = os.path.join(path, ".knit")
 
         if not (force or os.path.isdir(self.gitdir)):
-            raise Exception("Not a Git repository %s" % path)
+            raise Exception("Not a Knit repository %s" % path)
 
         # Read configuration file in .git/config
         self.conf = configparser.ConfigParser()
