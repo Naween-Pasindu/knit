@@ -1,5 +1,5 @@
 import os, configparser
-from Structure.Repository import Repository
+from Structure.KnitRepository import KnitRepository
 from utils.utils import repo_dir, repo_file
 
 def repo_default_config():
@@ -15,7 +15,7 @@ def repo_default_config():
 def repo_create(path):
     """Create a new repository at path."""
 
-    repo = Repository(path, True)
+    repo = KnitRepository(path, True)
 
     # First, we make sure the path either doesn't exist or is an
     # empty dir.
@@ -51,7 +51,7 @@ def repo_find(path=".", required=True):
     path = os.path.realpath(path)
 
     if os.path.isdir(os.path.join(path, ".git")):
-        return Repository(path)
+        return KnitRepository(path)
 
     parent = os.path.realpath(os.path.join(path, ".."))
 

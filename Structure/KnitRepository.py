@@ -2,7 +2,7 @@ import os
 import configparser
 from utils.utils import repo_path, repo_file
 
-class Repository (object):
+class KnitRepository (object):
 
     worktree = None
     gitdir = None
